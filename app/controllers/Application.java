@@ -13,4 +13,14 @@ public class Application extends Controller {
         render();
     }
 
+    public static void login(String email) {
+    	User user = User.findOrCreate(email);
+    	session.put("user", user.id);
+    	redirect("/status");
+    }
+    
+    public static void status() {
+    	User user = User.findById(Long.parseLong(session.get("user")));
+    	render(user);
+    }
 }
