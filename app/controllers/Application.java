@@ -24,8 +24,9 @@ public class Application extends Controller {
     	render(user);
     }
 
-	public static void feedback() {
-		render();
+	public static void feedback(Feedback feedback) {
+		feedback.save();
+		redirect("/status");
 	}
 
 	public static void admin() {

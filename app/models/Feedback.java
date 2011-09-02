@@ -1,5 +1,8 @@
 package models;
 
+
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
@@ -11,4 +14,8 @@ public class Feedback extends Model {
 	@ManyToOne
 	public User user;
 	public int points;
+	
+	public Date getTimestamp() {
+		return new Date();
+	}
 }

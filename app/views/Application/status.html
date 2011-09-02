@@ -3,8 +3,15 @@
 
 <p>You have ${user.getPoints()} points.</p>
 
+<form action="/feedback" method="post">
+<textarea name="feedback.message"></textarea>
+<label><input type="text" name="feedback.points"> Points</label>
+<input type="hidden" name="feedback.user.id" value="${user.id}">
+<button type="submit">Submit feedback</button>
+</form>
+
 #{list items:user.feedbacks, as:"feedback"}
 <div>
-<p>${feedback.message}</p>
+<p>${feedback.message}, ${feedback.points} points (${feedback.timestamp}) <a href="#">Like</a> <a href="#">Dislike</a></p>
 </div>
 #{/list}

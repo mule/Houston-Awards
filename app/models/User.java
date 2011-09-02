@@ -35,7 +35,10 @@ public class User extends Model {
 	}
 	
 	public int getPoints() {
-		return 100;
+		int total = 0;
+		for (Feedback f : feedbacks) {
+			total += f.points;
+		}
+		return total;
 	}
-
 }
