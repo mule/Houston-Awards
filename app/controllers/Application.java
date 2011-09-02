@@ -27,4 +27,8 @@ public class Application extends Controller {
 	public static void feedback() {
 		render();
 	}
+
+	public static void admin() {
+		render();
+	}
 }
