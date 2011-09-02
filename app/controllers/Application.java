@@ -29,6 +29,7 @@ public class Application extends Controller {
 	}
 
 	public static void admin() {
-		render();
+		List<Feedback> feedbacks = Feedback.findAll();
+		render(feedbacks);
 	}
 }

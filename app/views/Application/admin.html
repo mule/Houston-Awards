@@ -1,1 +1,6 @@
 #{extends "main.html" /}
+<h2>Feedbacks</h2>
+#{list items:feedbacks, as:'feedback' } 
+<p>${feedback.message}</p>
+<b>${feedback.points}</b>
+#{/list}
