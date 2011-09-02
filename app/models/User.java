@@ -1,14 +1,22 @@
 package models;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.UniqueConstraint;
 
+import play.data.validation.Email;
 import play.db.jpa.JPABase;
 import play.db.jpa.Model;
 
 @Entity
 public class User extends Model {
+	@Email
 	public String email;
+	public String fullname;
+	@OneToMany(mappedBy = "user")
+	public Set<Feedback> feedbacks;
 	
 	public User() {
 	}
@@ -24,6 +32,10 @@ public class User extends Model {
 			user.save();
 		}
 		return user;
+	}
+	
+	public int getPoints() {
+		return 100;
 	}
 
 }

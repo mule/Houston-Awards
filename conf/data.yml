@@ -1,0 +1,26 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+User(u1):
+  email: "steve@apple.com"
+  fullname: "Steve Jobs"
+
+User(u2):
+  email: "billg@microsoft.com"
+  fullname: "Bill Gates"
+
+Feedback(f1):
+  message: "Tosi hyvää työtä pojat!"
+  points: 55
+  user: u1
+
+Feedback(f2):
+  message: "Vähän vois nyt parantaan tuota otetta."
+  points: 3
+  user: u2
+
+Feedback(f3):
+  message: "Taas myöhässä pojat"
+  points: 1
+  user: u1
+

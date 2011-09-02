@@ -1,2 +1,10 @@
 #{extends "main.html" /}
 <h1>Status for user ${user.email}</h1>
+
+<p>You have ${user.getPoints()} points.</p>
+
+#{list items:user.feedbacks, as:"feedback"}
+<div>
+<p>${feedback.message}</p>
+</div>
+#{/list}
