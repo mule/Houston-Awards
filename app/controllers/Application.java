@@ -23,4 +23,8 @@ public class Application extends Controller {
     	User user = User.findById(Long.parseLong(session.get("user")));
     	render(user);
     }
+
+	public static void feedback() {
+		render();
+	}
 }
