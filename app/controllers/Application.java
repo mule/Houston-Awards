@@ -28,4 +28,9 @@ public class Application extends Controller {
 		feedback.save();
 		redirect("/status");
 	}
+
+	public static void admin() {
+		List<Feedback> feedbacks = Feedback.findAll();
+		render(feedbacks);
+	}
 }

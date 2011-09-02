@@ -9,6 +9,9 @@ GET     /status									Application.status
 GET		/feedback								Application.feedback
 POST	/feedback								Application.feedback
 
+# Import CRUD routes
+GET      /admin									Application.admin
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
